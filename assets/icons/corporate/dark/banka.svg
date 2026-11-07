@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="Banka">
+<title>Banka</title>
+<g fill="#A7B6FF" fill-opacity=".13" stroke="none"><path d="m24 5 19 11H5Z" fill="#A7B6FF" /><rect x="9" y="19" width="30" height="17" rx="1" fill="#A7B6FF" /></g>
+<g fill="none" stroke="#EDF2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m24 5 19 11H5ZM8 41h32M5 35h38M11 20v15M20 20v15M28 20v15M37 20v15" fill="none" /><circle cx="24" cy="12" r="1.3" fill="#EDF2FF" /></g>
+</svg>

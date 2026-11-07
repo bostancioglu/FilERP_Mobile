@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="E-Belge">
+<title>E-Belge</title>
+<g fill="#5265B8" fill-opacity=".13" stroke="none"><rect x="12" y="16" width="20" height="21" rx="2" fill="#5265B8" /><circle cx="33" cy="33" r="9" fill="#5265B8" /></g>
+<g fill="none" stroke="#14213D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M28 5H11a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h12M28 5v9h9V8ZM15 20h14M15 26h9" fill="none" /><circle cx="33" cy="33" r="10" fill="none" /><path d="m28 33 4 4 6-7" fill="none" stroke="#5265B8"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="Cari">
+<title>Cari</title>
+<g fill="none" fill-opacity=".13" stroke="none"><rect x="24" y="25" width="16" height="14" rx="2" fill="none" /></g>
+<g fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="13" width="17" height="28" rx="3" fill="none" /><rect x="22" y="23" width="20" height="18" rx="3" fill="none" /><path d="M10 20h7M10 26h4M10 32h4" fill="none" /><circle cx="32" cy="13" r="5" fill="none" /><path d="M24 22c0-5 3-7 8-7s8 2 8 7M28 30h8M28 35h5" fill="none" /></g>
+</svg>
