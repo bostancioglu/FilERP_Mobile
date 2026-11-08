@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="Kasa">
+<title>Kasa</title>
+<g fill="#A7B6FF" fill-opacity=".13" stroke="none"><rect x="7" y="29" width="34" height="11" rx="2" fill="#A7B6FF" /></g>
+<g fill="none" stroke="#EDF2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="27" width="38" height="15" rx="3" fill="none" /><path d="M10 27V15h16v12M14 15V7h17v11h-5M12 33h9M12 37h5" fill="none" /><path d="M31 22h7M31 17h7M33 12h5" fill="none" /><circle cx="34" cy="35" r="3" fill="none" /></g>
+</svg>

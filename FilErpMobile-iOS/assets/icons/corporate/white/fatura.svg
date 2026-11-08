@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="Fatura">
+<title>Fatura</title>
+<g fill="none" fill-opacity=".13" stroke="none"><rect x="13" y="15" width="16" height="20" rx="2" fill="none" /></g>
+<g fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M29 5H12a3 3 0 0 0-3 3v32l4-2 4 2 4-2 4 2 4-2 4 2V9Z" fill="none" /><path d="M28 5v8h7M16 19h10M16 25h12M16 31h6" fill="none" /><path d="M29 29v6m-2-4h4" fill="none" stroke="#FFFFFF"/></g>
+</svg>

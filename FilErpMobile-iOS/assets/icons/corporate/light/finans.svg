@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="Finans">
+<title>Finans</title>
+<g fill="#5265B8" fill-opacity=".13" stroke="none"><rect x="9" y="18" width="30" height="21" rx="3" fill="#5265B8" /></g>
+<g fill="none" stroke="#14213D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 16V11a4 4 0 0 1 4-4h22v9" fill="none" /><rect x="6" y="15" width="36" height="27" rx="5" fill="none" /><rect x="30" y="24" width="12" height="10" rx="3" fill="none" /><circle cx="35" cy="29" r="1" fill="#14213D" /><path d="M13 34v-5M19 34v-9M25 34V21" fill="none" stroke="#5265B8"/></g>
+</svg>

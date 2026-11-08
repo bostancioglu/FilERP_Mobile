@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" color="#14213D" role="img" aria-label="Sipariş">
+<title>Sipariş</title>
+<g fill="none" fill-opacity=".13" stroke="none"><rect x="14" y="16" width="20" height="20" rx="3" fill="none" /></g>
+<g fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="9" width="28" height="32" rx="4" fill="none" /><rect x="18" y="5" width="12" height="8" rx="3" fill="none" /><path d="M17 21h14M17 28l4 4 9-10" fill="none" /></g>
+</svg>
