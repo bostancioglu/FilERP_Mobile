@@ -1,3 +1,4 @@
+import 'package:FilERP/widgets/document_line_amount.dart';
 import 'package:FilERP/widgets/erp_dialog_action.dart';
 import 'package:FilERP/services/auth/authorization_session.dart';
 import 'package:FilERP/widgets/permission_page.dart';
@@ -378,23 +379,11 @@ class _SatisSiparisDetayPageState extends State<SatisSiparisDetayPage> {
                 ),
                 SizedBox(width: 8),
                 // Tutar
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      moneyFmt.format(_d(k.tutar ?? 0)),
-                      style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: _primary),
-                    ),
-                    Text(para,
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 10,
-                            color: _scheme.onSurfaceVariant)),
-                  ],
+                DocumentLineAmount(
+                  amount: moneyFmt.format(_d(k.tutar ?? 0)),
+                  currency: para,
+                  color: _primary,
+                  currencyColor: _scheme.onSurfaceVariant,
                 ),
               ],
             ),
