@@ -4,6 +4,7 @@ import 'sube_dto.dart';
 import 'yetki_dto.dart';
 
 class KullaniciDto {
+  bool admin;
   int? firmaId;
   int? sirketId;
   int? subeId;
@@ -19,6 +20,7 @@ class KullaniciDto {
   List<YetkiDto>? yetkiler;
 
   KullaniciDto({
+    this.admin = false,
     this.firmaId,
     this.sirketId,
     this.subeId,
@@ -34,6 +36,7 @@ class KullaniciDto {
 
   factory KullaniciDto.fromJson(Map<String, dynamic> json) {
     return KullaniciDto(
+      admin: json["Admin"] == true,
       firmaId: json["Firmaid"],
       sirketId: json["Sirketid"],
       subeId: json["Subeid"],
@@ -41,15 +44,12 @@ class KullaniciDto {
       ad: json["Ad"],
       soyad: json["Soyad"],
       token: json["Token"],
-
       firma: json["Firma"] != null ? FirmaDto.fromJson(json["Firma"]) : null,
-      sirket: json["Sirket"] != null ? SirketDto.fromJson(json["Sirket"]) : null,
+      sirket:
+          json["Sirket"] != null ? SirketDto.fromJson(json["Sirket"]) : null,
       sube: json["Sube"] != null ? SubeDto.fromJson(json["Sube"]) : null,
-
       yetkiler: json["Yetki"] != null
-          ? (json["Yetki"] as List)
-              .map((e) => YetkiDto.fromJson(e))
-              .toList()
+          ? (json["Yetki"] as List).map((e) => YetkiDto.fromJson(e)).toList()
           : [],
     );
   }

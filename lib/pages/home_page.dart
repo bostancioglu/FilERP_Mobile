@@ -1,3 +1,4 @@
+import '../widgets/admin_dashboard_button.dart';
 import 'package:FilERP/services/auth/authorization_session.dart';
 import 'package:FilERP/widgets/permission_page.dart';
 import 'package:FilERP/widgets/corporate_menu_icon.dart';
@@ -261,6 +262,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                 elevation: 0,
                 iconTheme: IconThemeData(color: scheme.onSurface),
                 actions: [
+                  const AdminDashboardButton(),
                   // Bekleyen offline kayıt sayısı
                   ValueListenableBuilder<int>(
                     valueListenable: OfflineService.instance.pendingCount,

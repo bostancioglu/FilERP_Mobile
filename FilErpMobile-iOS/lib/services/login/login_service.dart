@@ -141,7 +141,8 @@ class LoginService {
       await prefs.setString("token_final", json["Data"]["Token"]);
       await prefs.setInt("sirket_id", sirketId);
       await prefs.setInt("sube_id", subeId);
-      await AuthorizationSession.instance.selectBranch(sirketId, subeId);
+      await AuthorizationSession.instance
+          .selectBranch(sirketId, subeId, admin: json['Data']['Admin'] == true);
       CariPlasiyerHelper.temizle();
       await _branchDefaults(prefs, oldScope, session.cacheScope);
     }
@@ -191,6 +192,7 @@ class LoginService {
     final display = envelope['display'] as Map? ?? {};
     return KullaniciDto.fromJson({
       'Firmaid': envelope['firm'],
+      'Admin': envelope['admin'] == true,
       'Kullaniciadi': display['user'] ?? prefs.getString('kullanici_adi'),
       'Firma': {'Ad': display['firm'] ?? prefs.getString('firma_adi')},
       'Yetki': [

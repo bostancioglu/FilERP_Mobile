@@ -15,6 +15,8 @@ class AuthorizationSession extends ChangeNotifier {
   static const _activeKey = 'permission_active_v1';
   Map<int, YetkiDto> _permissions = {};
   bool _ready = false;
+  bool _isAdmin = false;
+  bool get isAdmin => signedIn && _isAdmin;
   String? _environment;
   String _account = '';
   int revision = 0;
@@ -59,6 +61,7 @@ class AuthorizationSession extends ChangeNotifier {
         .toList();
     final envelope = {
       'environment': ApiConfig.serverType.name,
+      'admin': user['Admin'] == true,
       'user': user['Id']?.toString() ?? user['Kullaniciadi']?.toString(),
       'firm': user['Firmaid'],
       'rows': rows,
@@ -76,11 +79,12 @@ class AuthorizationSession extends ChangeNotifier {
     await prefs.setString(_pendingKey, jsonEncode(envelope));
   }
 
-  Future<void> selectBranch(int company, int branch) async {
+  Future<void> selectBranch(int company, int branch, {bool? admin}) async {
     final prefs = await SharedPreferences.getInstance();
     final envelope = await loginEnvelope();
     if (!(envelope['rows'] as List).any((r) => r['Subeid'] == branch))
       throw const YetkiHatasi('Bu şubeye erişiminiz yok.');
+    envelope['admin'] = admin ?? envelope['admin'] == true;
     envelope['company'] = company;
     envelope['branch'] = branch;
     await prefs.setString(_activeKey, jsonEncode(envelope));
@@ -89,7 +93,8 @@ class AuthorizationSession extends ChangeNotifier {
         company: company,
         environment: envelope['environment'] as String,
         account: '${envelope['firm']}:${envelope['user']}',
-        token: prefs.getString('token_final'));
+        token: prefs.getString('token_final'),
+        isAdmin: envelope['admin'] == true);
   }
 
   Future<Map<String, dynamic>> loginEnvelope() async {
@@ -117,7 +122,8 @@ class AuthorizationSession extends ChangeNotifier {
       required int company,
       required String environment,
       String account = '',
-      String? token}) {
+      String? token,
+      bool isAdmin = false}) {
     final permissions = <int, YetkiDto>{};
     for (final raw in rows) {
       final row = YetkiDto.fromJson(Map<String, dynamic>.from(raw));
@@ -127,6 +133,7 @@ class AuthorizationSession extends ChangeNotifier {
       }
     }
     _permissions = permissions;
+    _isAdmin = isAdmin;
     branchId = branch;
     companyId = company;
     _environment = environment;
@@ -154,13 +161,15 @@ class AuthorizationSession extends ChangeNotifier {
           company: data['company'] as int,
           environment: data['environment'] as String,
           account: '${data['firm']}:${data['user']}',
-          token: prefs.getString('token_final'));
+          token: prefs.getString('token_final'),
+          isAdmin: data['admin'] == true);
     } catch (_) {
       reset();
     }
   }
 
   void reset() {
+    _isAdmin = false;
     _permissions = {};
     branchId = companyId = null;
     _environment = null;

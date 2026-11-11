@@ -1,3 +1,4 @@
+import '../widgets/admin_dashboard_button.dart';
 import 'package:FilERP/widgets/erp_dialog_action.dart';
 import 'package:FilERP/services/auth/menu_access.dart';
 import 'package:FilERP/services/auth/authorization_session.dart';
@@ -399,6 +400,7 @@ class _AnaSayfaYeniTasarimPageState extends State<AnaSayfaYeniTasarimPage> {
       bottomNavigationBar: _altCubuk(),
       body: CustomScrollView(slivers: [
         SliverToBoxAdapter(child: _ust(context)),
+        const SliverToBoxAdapter(child: Align(alignment: Alignment.centerRight, child: AdminDashboardButton())),
         SliverToBoxAdapter(
             child: q.isEmpty ? _gunOzeti() : const SizedBox.shrink()),
         SliverToBoxAdapter(
