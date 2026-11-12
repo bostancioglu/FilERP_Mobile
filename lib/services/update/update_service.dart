@@ -76,6 +76,8 @@ class UpdateService {
   // ─── Güncelleme Kontrolü ─────────────────────────────────────────────────
   /// Güncelleme varsa [UpdateInfo] döner, yoksa null.
   Future<UpdateInfo?> checkForUpdate() async {
+    // APK güncellemesi masaüstü ve iOS üzerinde uygulanmaz.
+    if (!Platform.isAndroid) return null;
     final pkgInfo     = await PackageInfo.fromPlatform();
     final currentCode = int.tryParse(pkgInfo.buildNumber) ?? 0;
 
@@ -97,6 +99,9 @@ class UpdateService {
 
   // ─── İndir & Kur ─────────────────────────────────────────────────────────
   Future<void> downloadAndInstall(UpdateInfo info) async {
+    if (!Platform.isAndroid) {
+      throw UnsupportedError('APK güncellemesi yalnızca Android üzerinde kullanılabilir.');
+    }
     downloadProgress.value = 0.0;
 
     try {
